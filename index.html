@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roey Tamir - CV</title>
+    <!-- Chosen Palette: Warm Neutrals & Deep Teal -->
+    <!-- Application Structure Plan: Restructured into a traditional, chronological CV format as requested. The layout uses a main content area with a left-aligned timeline/section title and right-aligned details. This is a classic, highly readable format for professional summaries. The narrative is now built through a clear progression of roles. Interactive elements (chart, modals) are retained but embedded within their relevant chronological entries to provide depth without disrupting the timeline. -->
+    <!-- Visualization & Content Choices: 1. BMT Growth Data -> Goal: Compare & Impress -> Viz: Bar Chart (Chart.js) -> Now placed directly under the COO role at BMT to provide immediate, quantifiable proof of performance for that specific position. 2. Patent Portfolio -> Goal: Inform & Organize -> Viz: HTML 'Patent Cards' -> Retained as a distinct "Patents" section, which is standard for academic/technical CVs, allowing easy access to IP details. 3. Career Path -> Goal: Show Chronological Progression -> Viz: Single-column timeline layout -> Justification: This directly addresses the user's request for a "more traditional" CV format, emphasizing career growth over time. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light Gray */
+            color: #212529; /* Darker Gray */
+        }
+        h1, h2, h3, .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        .timeline-line {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background-color: #e9ecef; /* Light gray line */
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background-color: #0d9488; /* Teal */
+            border: 2px solid #ffffff;
+        }
+        .section-title {
+            color: #0f766e; /* Darker Teal */
+        }
+        .patent-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .patent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+        }
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+         @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="main-container shadow-2xl my-0 sm:my-12">
+        <!-- Header -->
+        <header class="p-8 md:p-12 bg-teal-800 text-white">
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold">Roey Tamir</h1>
+                    <p class="text-xl text-teal-200 mt-2">Chief Executive Officer & AI Innovator</p>
+                </div>
+                <div class="mt-6 md:mt-0 text-left md:text-right text-sm text-teal-100 space-y-1">
+                    <p>Tel Aviv, Israel</p>
+                    <p>roey@rapidtest.ai</p>
+                    <p>[LinkedIn Profile URL]</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="p-8 md:p-12">
+            <!-- Executive Summary -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold section-title mb-4 border-b-2 border-teal-100 pb-2">Executive Summary</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    A dynamic and entrepreneurial Chief Executive Officer, age 31, with a distinguished record of founding and scaling an AI-driven medical device company from concept to a patent-backed venture. Combines a rare mix of strategic executive leadership, hands-on technical mastery in AI and software engineering, and comprehensive experience in navigating the complex global regulatory landscape for medical devices. Expert in leading product innovation from R&D to automated manufacturing and successful market entry. Proven ability to secure intellectual property, manage complex international projects, and build high-performing, cross-functional teams.
+                </p>
+            </section>
+
+            <!-- Professional Experience -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold section-title mb-6 border-b-2 border-teal-100 pb-2">Professional Experience</h2>
+                <div class="space-y-12">
+                    
+                    <!-- RapidTest.ai -->
+                    <div class="relative pl-8">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-dot"></div>
+                        <p class="font-semibold text-gray-500">2022 – Present</p>
+                        <h3 class="text-xl font-bold text-gray-800">Chief Executive Officer & Founder</h3>
+                        <p class="text-lg font-medium text-gray-600">RapidTest.ai, Tel Aviv</p>
+                        <ul class="mt-4 space-y-2 list-disc list-inside text-gray-700">
+                            <li>Founded RapidTest.ai to solve a critical inefficiency observed in the diagnostics market, with a mission to leverage Israel's strength in AI to empower citizens with accessible, at-home testing.</li>
+                            <li>Architected a revolutionary diagnostic platform using advanced computer vision and deep learning to analyze medical tests via any smartphone camera.</li>
+                            <li>Authored and filed three foundational patents, securing the core technology and establishing a strong IP foundation for future growth.</li>
+                            <li>Developed a seamless integration model for Health Maintenance Organizations (HMOs), insurance providers, and manufacturers, ensuring rapid and effective market adoption.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- BMT Diagnostics -->
+                    <div class="relative pl-8">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-dot"></div>
+                        <p class="font-semibold text-gray-500">2020 – Present</p>
+                        <h3 class="text-xl font-bold text-gray-800">Chief Operating Officer</h3>
+                        <p class="text-lg font-medium text-gray-600">BMT Diagnostics (Family Enterprise)</p>
+                         <ul class="mt-4 space-y-2 list-disc list-inside text-gray-700">
+                            <li>Promoted to COO to drive strategic growth, leading all core business units including Manufacturing, Supply Chain, International Business Development, and Quality Control.</li>
+                            <li>Spearheaded a landmark project with the Israeli Ministry of Economy to build a state-of-the-art automated manufacturing line.</li>
+                             <li>Possess deep, hands-on experience with global regulatory standards, having successfully managed FDA 510(k) and CE marking submissions.</li>
+                            <li>Built the company's QMS infrastructure from the ground up to meet stringent ISO 13485 standards.</li>
+                        </ul>
+                        <div class="mt-8 bg-slate-50 p-6 rounded-lg border">
+                             <h4 class="text-lg font-bold text-center text-teal-800 mb-4">Key Operational Achievement: Automation Project Impact</h4>
+                             <p class="text-center text-slate-600 max-w-xl mx-auto mb-6 text-sm">This chart visualizes the transformative results of the strategic automation project, which yielded a 280% increase in production capacity and a 120% reduction in costs.</p>
+                            <div class="chart-container">
+                                <canvas id="impactChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                     <div class="relative pl-8">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-dot"></div>
+                        <p class="font-semibold text-gray-500">2018 – 2020</p>
+                        <h3 class="text-xl font-bold text-gray-800">Vice President of Research & Development</h3>
+                        <p class="text-lg font-medium text-gray-600">BMT Diagnostics</p>
+                         <ul class="mt-4 space-y-2 list-disc list-inside text-gray-700">
+                            <li>Led all R&D initiatives for novel medical device tests, fostering an environment of rapid innovation.</li>
+                            <li>Managed the entire V&V (Verification and Validation) process for new products, ensuring technical soundness and regulatory readiness.</li>
+                            <li>Successfully transitioned from a technical leadership role to a senior operational position, laying the groundwork for the COO role.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+             <!-- Patents Section -->
+            <section id="ip" class="mb-12">
+                <h2 class="text-2xl font-bold section-title mb-6 border-b-2 border-teal-100 pb-2">Patents & Intellectual Property</h2>
+                 <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="patent-card bg-white rounded-lg p-6 border border-gray-200" data-patent="1">
+                        <h3 class="text-lg font-bold mb-2 text-teal-800">Granted U.S. Patent</h3>
+                        <p class="font-mono text-sm text-gray-500 mb-3">US 11,887,307 B2</p>
+                        <p class="text-sm text-gray-600">Deep learning analysis of medical images using novel neural network architectures.</p>
+                    </div>
+                    <div class="patent-card bg-white rounded-lg p-6 border border-gray-200" data-patent="2">
+                        <h3 class="text-lg font-bold mb-2 text-teal-800">Pending U.S. Application</h3>
+                        <p class="font-mono text-sm text-gray-500 mb-3">US 2024/0112342 A1</p>
+                        <p class="text-sm text-gray-600">Advanced techniques for acquiring rapid diagnostic test results with higher accuracy.</p>
+                    </div>
+                    <div class="patent-card bg-white rounded-lg p-6 border border-gray-200" data-patent="3">
+                        <h3 class="text-lg font-bold mb-2 text-teal-800">Pending Application</h3>
+                        <p class="font-mono text-sm text-gray-500 mb-3">Filed & Confidential</p>
+                        <p class="text-sm text-gray-600">Covering novel aspects of the at-home diagnostic device and its data analysis methods.</p>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Education & Military -->
+             <section class="grid md:grid-cols-2 gap-x-12 mb-12">
+                <div>
+                     <h2 class="text-2xl font-bold section-title mb-6 border-b-2 border-teal-100 pb-2">Education</h2>
+                     <p class="font-semibold text-gray-500">2017 – 2021</p>
+                     <h3 class="text-xl font-bold text-gray-800">Engineering & AI Self-Study</h3>
+                     <p class="text-lg font-medium text-gray-600">Ben-Gurion University & Independent Coursework</p>
+                     <ul class="mt-2 space-y-2 list-disc list-inside text-gray-700">
+                        <li>Completed foundational coursework in Electrical Engineering at Ben-Gurion University of the Negev.</li>
+                        <li>Concurrently pursued intensive self-study in AI and Software Engineering through specialized courses from world-leading institutions, including MIT, Stanford, and John Bryce.</li>
+                    </ul>
+                </div>
+                <div>
+                     <h2 class="text-2xl font-bold section-title mb-6 border-b-2 border-teal-100 pb-2">Military Service</h2>
+                     <p class="font-semibold text-gray-500">2012 – 2016</p>
+                     <h3 class="text-xl font-bold text-gray-800">Intelligence Officer (Lieutenant)</h3>
+                     <p class="text-lg font-medium text-gray-600">Israel Defense Forces (IDF)</p>
+                     <p class="mt-2 text-gray-700">Served as a field intelligence officer, honing skills in rapid data analysis and strategic decision-making under high-pressure environments.</p>
+                </div>
+            </section>
+            
+            <!-- Skills -->
+            <section>
+                 <h2 class="text-2xl font-bold section-title mb-6 border-b-2 border-teal-100 pb-2">Technical Skills</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-poppins font-bold text-lg text-gray-700 mb-3">AI & Programming</h3>
+                        <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                            <li>Python (NumPy, Pandas)</li>
+                            <li>TensorFlow, PyTorch</li>
+                            <li>Computer Vision & Deep Learning</li>
+                            <li>Java, JavaScript, HTML5</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-poppins font-bold text-lg text-gray-700 mb-3">Regulatory & Quality</h3>
+                        <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                            <li>ISO 13485</li>
+                            <li>FDA QSR (21 CFR 820)</li>
+                            <li>CE Marking Process</li>
+                            <li>QMS Architecture</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-poppins font-bold text-lg text-gray-700 mb-3">Infrastructure & Strategy</h3>
+                        <ul class="space-y-2 text-gray-600 list-disc list-inside">
+                            <li>Process Re-engineering</li>
+                            <li>Git, Docker</li>
+                            <li>Cloud Basics (AWS/GCP)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Patent Modal -->
+    <div id="patent-modal" class="modal fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 hidden opacity-0">
+        <div id="modal-content" class="bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8 relative transform scale-95 transition-transform duration-300">
+            <button id="modal-close" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h3 id="modal-title" class="text-2xl font-bold text-teal-800 mb-4"></h3>
+            <p id="modal-number" class="font-mono text-sm text-gray-500 mb-4"></p>
+            <div class="border-t border-gray-200 pt-4">
+                <h4 class="font-bold text-gray-700 mb-2">Abstract</h4>
+                <p id="modal-abstract" class="text-gray-600 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('impactChart')?.getContext('2d');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Production Capacity', 'Operational Cost'],
+                        datasets: [{
+                            label: 'Relative Change',
+                            data: [280, -120],
+                            backgroundColor: ['rgba(13, 148, 136, 0.7)', 'rgba(204, 51, 51, 0.7)'],
+                            borderColor: ['rgba(15, 118, 110, 1)', 'rgba(153, 0, 0, 1)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: { callback: value => value + '%' },
+                                title: { display: true, text: 'Percentage Change' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const patentData = {
+                '1': {
+                    title: 'Granted U.S. Patent: Computer systems and computer-implemented methods for rapid diagnostic test result interpretation platform utilizing computer vision',
+                    number: 'US 11,887,307 B2',
+                    abstract: 'This foundational patent protects the core methodology for analyzing medical images using novel neural network architectures. It details a system capable of visually analyzing a rapid diagnostic test device in real-time using a camera system. The system identifies the test result and transmits it to the user, operator, or healthcare provider to "close the loop" between testing and clinical action.'
+                },
+                '2': {
+                    title: 'Pending U.S. Application: COMPUTER-BASED SYSTEMS AND METHODS UTILIZING COMPUTER VISION DEEP LEARNING TECHNIQUES FOR ACQUIRING RAPID DIAGNOSTIC TEST RESULTS',
+                    number: 'US Publication No. 2024/0112342 A1',
+                    abstract: 'This application signifies ongoing development in advanced AI for diagnostic accuracy. It focuses on using deep learning techniques, a subset of machine learning, to analyze vast amounts of data to identify complex patterns, potentially leading to higher accuracy in test interpretation and the development of predictive diagnostic capabilities.'
+                },
+                '3': {
+                    title: 'Additional Pending Application',
+                    number: 'Application Filed and Pending',
+                    abstract: 'This confidential application covers novel aspects of the at-home diagnostic device itself, including its physical design and associated data analysis methods. It further strengthens the IP portfolio by protecting the hardware component of the integrated diagnostic solution.'
+                }
+            };
+
+            const modal = document.getElementById('patent-modal');
+            const modalContent = document.getElementById('modal-content');
+            const modalClose = document.getElementById('modal-close');
+            const patentCards = document.querySelectorAll('.patent-card');
+            
+            const openModal = (patentId) => {
+                const data = patentData[patentId];
+                if (data && modal && modalContent) {
+                    document.getElementById('modal-title').textContent = data.title;
+                    document.getElementById('modal-number').textContent = data.number;
+                    document.getElementById('modal-abstract').textContent = data.abstract;
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                         modal.classList.remove('opacity-0');
+                         modalContent.classList.remove('scale-95');
+                    }, 10);
+                }
+            };
+
+            const closeModal = () => {
+                if (modal && modalContent) {
+                    modal.classList.add('opacity-0');
+                    modalContent.classList.add('scale-95');
+                    setTimeout(() => modal.classList.add('hidden'), 300);
+                }
+            };
+
+            patentCards.forEach(card => card.addEventListener('click', () => openModal(card.dataset.patent)));
+            modalClose?.addEventListener('click', closeModal);
+            modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', (e) => { if (e.key === "Escape" && !modal?.classList.contains('hidden')) closeModal(); });
+        });
+    </script>
+</body>
+</html>
